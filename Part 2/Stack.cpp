@@ -3,14 +3,17 @@
 
 using namespace std;
 
+// check if stack is empty
 bool Stack::isEmpty() {
     return stackList.empty();
 }
 
+//push value onto stack
 void Stack::push(int value) {
     stackList.push_front(value);
 }
 
+//pop top element
 void Stack::pop() {
     if (!isEmpty()) {
         cout << "Popped: " << stackList.front() << endl;
@@ -20,6 +23,7 @@ void Stack::pop() {
     }
 }
 
+// return the top element of the stack
 int Stack::top() {
     if (!isEmpty()) {
         return stackList.front();
@@ -29,6 +33,7 @@ int Stack::top() {
     }
 }
 
+//find average of the stack
 double Stack::findAverage() {
     if (!isEmpty()) {
         Node<int>* current = stackList.head;
@@ -42,12 +47,14 @@ double Stack::findAverage() {
         }
 
         return static_cast<double>(sum) / count;
+    // return message if empty
     } else {
         cout << "Stack is empty. No elements to average." << endl;
         return 0;
     }
 }
 
+//print stack
 void Stack::printStack() {
     if (!isEmpty()) {
         stackList.print_list();
@@ -56,6 +63,7 @@ void Stack::printStack() {
     }
 }
 
+//print menu
 void displayMenu() {
     cout << "\n--- Stack Operations Menu ---\n";
     cout << "1. Create a stack\n";
